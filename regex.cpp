@@ -10,7 +10,7 @@ using namespace std;
 int main() {
 
     string name = "";
-    regex nombre("");
+    regex nombre("([a-zA-Z])*/s([a-zA-Z])*/s([a-zA-Z])*");
     string address = "";
     regex house("");
     string SSN = "";
