@@ -7,6 +7,10 @@ using namespace std;
 
 //Regex format: regex b("(Geek)(.*)");
 
+bool Luhn(string card) {
+
+}
+
 int main() {
 
     string name;
@@ -20,7 +24,7 @@ int main() {
     string FoneNum;
     regex phone("^\\(?[0-9]{3}\\)?(-| )?[0-9]{3}(-| )?[0-9]{4}$");
     string CardNum;
-    regex money("[\\d]{4}(\\s|-)?[\\d]{4}(\\s|-)?[\\d]{4}(\\s|-)?[\\d]{3}(\\s|-)?[\\d]?");
+    regex money("[\\d]{4}[\\d]{4}[\\d]{4}[\\d]{3}[\\d]?");
     do  {
         cout << "put in your first middle and last name, seperated by spaces" << endl;
         getline(cin, name);
@@ -61,8 +65,9 @@ int main() {
         getline(cin, CardNum);
         if(!regex_match(CardNum, money)) {
             cout << "Incorrect format. Try again"<<endl;
+            continue;
         }
-    } while(!regex_match(CardNum, money));
+    } while(cardCorrect);
     cout<<"Thank you for signing away your soul ;)"<<endl;
     return 0;
 }
