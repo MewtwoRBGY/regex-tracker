@@ -12,7 +12,7 @@ int main() {
     string name;
     regex nombre("([a-zA-Z])*/s([a-zA-Z])*/s([a-zA-Z])*");
     string address;
-    regex house("");
+    regex house("[a-zA-Z0-9 ]{3,20}(-|,)[a-zA-Z ]{3,50}(-|,)(|([#0-9a-zA-Z ]{3,50}(-|,)))[a-zA-Z ]{3,50}(-|,)[ 0-9]{5}");
     string BirthDate("");
     regex bday("[/d]{4}(/s|-)((1[0-2])|(0[1-9]))(/s|-)((0[0-9])|(1[0-9])|(2[0-9])|(3[0-1]))");
     string SSN;
@@ -28,13 +28,13 @@ int main() {
             cout << "Incorrect format. Try again"<<endl;
         }
     } while(regex_match(name, nombre));
-    /*do {
+    do {
         cout << "put in your street address" << endl;
         cin >> address;
         if(regex_match(address, house)) {
             cout << "Incorrect format. Try again"<<endl;
         }
-    } while(regex_match(address, house));*/
+    } while(regex_match(address, house));
     do {
         cout << "put in your date of birth" << endl;
         cin >> BirthDate;
