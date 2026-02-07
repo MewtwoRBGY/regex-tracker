@@ -24,22 +24,44 @@ int main() {
     while(regex_match(name, nombre)) {
         cout << "put in your first, middle, and last name" << endl;
         cin >> name;
+        if(regex_match(name, nombre)) {
+            cout << "Incorrect format. Try again"<<endl;
+        }
     }
     while(regex_match(address, house)) {
         cout << "put in your street address" << endl;
         cin >> address;
+        if(regex_match(address, house)) {
+            cout << "Incorrect format. Try again"<<endl;
+        }
+    }
+    while(regex_match(BirthDate, bday)) {
+        cout << "put in your first, middle, and last name" << endl;
+        cin >> BirthDate;
+        if(regex_match(BirthDate, bday)) {
+            cout << "Incorrect format. Try again"<<endl;
+        }
     }
     while(regex_match(SSN, tracker)) {
         cout << "put in your SSN" << endl;
         cin >> SSN;
+        if(regex_match(SSN, tracker)) {
+            cout << "Incorrect format. Try again"<<endl;
+        }
     }
     while(regex_match(FoneNum, phone)) {
         cout << "put in your phone number" << endl;
         cin >> FoneNum;
+        if(regex_match(FoneNum, phone)) {
+            cout << "Incorrect format. Try again"<<endl;
+        }
     }
     while(regex_match(CardNum, money)) {
         cout << "put in your credit card number" << endl;
         cin >> CardNum;
+        if(regex_match(CardNum, money)) {
+            cout << "Incorrect format. Try again"<<endl;
+        }
     }
 
     return 0;
