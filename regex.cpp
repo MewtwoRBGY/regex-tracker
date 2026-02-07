@@ -10,30 +10,35 @@ using namespace std;
 int main() {
 
     string name = "";
-    regex nomre();
+    regex nombre("");
     string address = "";
-    regex house();
+    regex house("");
     string SSN = "";
-    regex tracker();
+    regex tracker("");
     string FoneNum = "";
-    regex phone();
+    regex phone("");
     string CardNum = "";
-    regex money();
+    regex money("");
+    while(regex_match(name, nombre)) {
         cout << "put in your first middle and last name" << endl;
         cin >> name;
-
+    }
+    while(regex_match(address, house)) {
         cout << "put in your street address" << endl;
         cin >> address;
-        
+    }
+    while(regex_match(SSN, tracker)) {
         cout << "put in your SSN" << endl;
         cin >> SSN;
-        
+    }
+    while(regex_match(FoneNum, phone)) {
         cout << "put in your phone number" << endl;
         cin >> FoneNum;
-
+    }
+    while(regex_match(CardNum, money)) {
         cout << "put in your credit card number" << endl;
         cin >> CardNum;
-        
+    }
 
     return 0;
 }
