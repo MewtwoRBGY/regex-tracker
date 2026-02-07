@@ -22,7 +22,7 @@ int main() {
     string CardNum;
     regex money("[/d]{4}(/s|-)?[/d]{4}(/s|-)?[/d]{4}(/s|-)?[/d]{3}(/s|-)?[/d]?");
     do  {
-        cout << "put in your first middle and last name" << endl;
+        cout << "put in your first middle and last name, seperated by spaces" << endl;
         cin >> name;
         if(!regex_match(name, nombre)) {
             cout << "Incorrect format. Try again"<<endl;
