@@ -36,7 +36,7 @@ int main() {
         }
     }
     while(regex_match(BirthDate, bday)) {
-        cout << "put in your first, middle, and last name" << endl;
+        cout << "put in your date of birth" << endl;
         cin >> BirthDate;
         if(regex_match(BirthDate, bday)) {
             cout << "Incorrect format. Try again"<<endl;
