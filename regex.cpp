@@ -12,13 +12,13 @@ int main() {
     string name;
     regex nombre("([a-zA-Z])* ([a-zA-Z])* ([a-zA-Z])*");
     string address;
-    regex house("[a-zA-Z0-9 ]{3,20}(-|,)[a-zA-Z ]{3,50}(-|,)(|([#0-9a-zA-Z ]{3,50}(-|,)))[a-zA-Z ]{3,50}(-|,)[ 0-9]{5}");
+    regex house("[a-zA-Z0-9 ]{3,50}(-|,| )(|([#0-9a-zA-Z ]{3,50}(-|,| )))[a-zA-Z ]{3,50}(-|,| )[ 0-9]{5}");
     string BirthDate("");
     regex bday("[\\d]{4}(\\s|-)((1[0-2])|(0[1-9]))(\\s|-)((0[0-9])|(1[0-9])|(2[0-9])|(3[0-1]))");
     string SSN;
     regex tracker("[0-9]{3}(-| )[0-9]{2}(-| )[0-9]{4}");
     string FoneNum;
-    regex phone("^[0-9]{3}-[0-9]{3}-[0-9]{4}$");
+    regex phone("^\\(?[0-9]{3}\\)?(-| )[0-9]{3}(-| )[0-9]{4}$");
     string CardNum;
     regex money("[\\d]{4}(\\s|-)?[\\d]{4}(\\s|-)?[\\d]{4}(\\s|-)?[\\d]{3}(\\s|-)?[\\d]?");
     do  {
@@ -63,6 +63,6 @@ int main() {
             cout << "Incorrect format. Try again"<<endl;
         }
     } while(!regex_match(CardNum, money));
-
+    cout<<"Thank you for signing away your soul ;)"<<endl;
     return 0;
 }
