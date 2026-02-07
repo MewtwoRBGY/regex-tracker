@@ -8,7 +8,7 @@ using namespace std;
 //Regex format: regex b("(Geek)(.*)");
 
 bool Luhn(string card) {
-
+    
 }
 
 int main() {
@@ -69,7 +69,7 @@ int main() {
             continue;
         }
         else {
-            cardCorrect = true;
+            cardCorrect = Luhn(CardNum);
         }
     } while(!cardCorrect);
     cout<<"Thank you for signing away your soul ;)"<<endl;
