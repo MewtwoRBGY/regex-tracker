@@ -8,7 +8,7 @@ using namespace std;
 //Regex format: regex b("(Geek)(.*)");
 
 bool Luhn(string card) {
-    
+return true;
 }
 
 int main() {
@@ -32,6 +32,8 @@ int main() {
         if(!regex_match(name, nombre)) {
             cout << "Incorrect format. Try again"<<endl;
         }
+        if (name.length()>100){ cout << "your input is over 100 characters, shorten it" <<endl; continue;}
+
     } while(!regex_match(name, nombre));
     do {
         cout << "put in your street address" << endl;
@@ -39,6 +41,8 @@ int main() {
         if(!regex_match(address, house)) {
             cout << "Incorrect format. Try again"<<endl;
         }
+                if (address.length()>100){ cout << "your input is over 100 characters, shorten it" <<endl; continue;}
+
     } while(!regex_match(address, house));
     do {
         cout << "put in your date of birth" << endl;
@@ -46,6 +50,8 @@ int main() {
         if(!regex_match(BirthDate, bday)) {
             cout << "Incorrect format. Try again"<<endl;
         }
+                if (BirthDate.length()>6){ cout << "your input is over 6 characters, shorten it" <<endl; continue;}
+
     } while(!regex_match(BirthDate, bday));
     do {
         cout << "put in your SSN" << endl;
@@ -53,6 +59,8 @@ int main() {
         if(!regex_match(SSN, tracker)) {
             cout << "Incorrect format. Try again"<<endl;
         }
+                if (SSN.length()>9){ cout << "your input is over 9 characters, shorten it" <<endl; continue;}
+
     } while(!regex_match(SSN, tracker));
     do  {
         cout << "put in your phone number" << endl;
@@ -60,6 +68,8 @@ int main() {
         if(!regex_match(FoneNum, phone)) {
             cout << "Incorrect format. Try again"<<endl;
         }
+                if (FoneNum.length()>10){ cout << "your input is over 10 characters, shorten it" <<endl; continue;}
+
     } while(!regex_match(FoneNum, phone));
     do {
         cout << "put in your credit card number" << endl;
@@ -68,8 +78,10 @@ int main() {
             cout << "Incorrect format. Try again"<<endl;
             continue;
         }
+                if (CardNum.length()>16){ cout << "your input is over 16 characters, shorten it" <<endl; continue;}
+
         else {
-            cardCorrect = Luhn(CardNum);
+            cardCorrect = true;
         }
     } while(!cardCorrect);
     cout<<"Thank you for signing away your soul ;)"<<endl;
