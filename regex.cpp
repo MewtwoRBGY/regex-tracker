@@ -10,7 +10,7 @@ using namespace std;
 int main() {
 
     string name;
-    regex nombre("([a-zA-Z])*\\s([a-zA-Z])*\\s([a-zA-Z])*");
+    regex nombre("([a-zA-Z])* ([a-zA-Z])* ([a-zA-Z])*");
     string address;
     regex house("[a-zA-Z0-9 ]{3,20}(-|,)[a-zA-Z ]{3,50}(-|,)(|([#0-9a-zA-Z ]{3,50}(-|,)))[a-zA-Z ]{3,50}(-|,)[ 0-9]{5}");
     string BirthDate("");
@@ -23,42 +23,42 @@ int main() {
     regex money("[\\d]{4}(\\s|-)?[\\d]{4}(\\s|-)?[\\d]{4}(\\s|-)?[\\d]{3}(\\s|-)?[\\d]?");
     do  {
         cout << "put in your first middle and last name, seperated by spaces" << endl;
-        cin >> name;
+        getline(cin, name);
         if(!regex_match(name, nombre)) {
             cout << "Incorrect format. Try again"<<endl;
         }
     } while(!regex_match(name, nombre));
     do {
         cout << "put in your street address" << endl;
-        cin >> address;
+        getline(cin, address);
         if(!regex_match(address, house)) {
             cout << "Incorrect format. Try again"<<endl;
         }
     } while(!regex_match(address, house));
     do {
         cout << "put in your date of birth" << endl;
-        cin >> BirthDate;
+       getline(cin, BirthDate);
         if(!regex_match(BirthDate, bday)) {
             cout << "Incorrect format. Try again"<<endl;
         }
     } while(!regex_match(BirthDate, bday));
     do {
         cout << "put in your SSN" << endl;
-        cin >> SSN;
+        getline(cin, SSN);
         if(!regex_match(SSN, tracker)) {
             cout << "Incorrect format. Try again"<<endl;
         }
     } while(!regex_match(SSN, tracker));
     do  {
         cout << "put in your phone number" << endl;
-        cin >> FoneNum;
+        getline(cin, FoneNum);
         if(!regex_match(FoneNum, phone)) {
             cout << "Incorrect format. Try again"<<endl;
         }
     } while(!regex_match(FoneNum, phone));
     do {
         cout << "put in your credit card number" << endl;
-        cin >> CardNum;
+        getline(cin, CardNum);
         if(!regex_match(CardNum, money)) {
             cout << "Incorrect format. Try again"<<endl;
         }
