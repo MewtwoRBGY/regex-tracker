@@ -16,7 +16,7 @@ int main() {
     string BirthDate("");
     regex bday("[/d]{4}(/w|-)((1[0-2])|(0[1-9]))(/w|-)((0[0-9])|(1[0-9])|(2[0-9])|(3[0-1]))");
     string SSN = "";
-    regex tracker("");
+    regex tracker([0-9]{3}(-| )[0-9]{2}(-| )[0-9]{4});
     string FoneNum = "";
     regex phone("^[0-9]{3}-[0-9]{3}-[0-9]{4}$");
     string CardNum = "";
