@@ -8,7 +8,21 @@ using namespace std;
 //Regex format: regex b("(Geek)(.*)");
 
 bool Luhn(string card) {
-return true;
+    int sum = 0;
+    bool alt = 0;
+    for(int i = card.length() - 1; i >= 0; i--) {
+        int x = card[i] - '0';
+        if(alt) {
+            x *=2;
+            if(x > 9) {
+            x = (x/10) + (x%10);
+        }
+        }
+        alt = !alt;
+        sum += x;
+    }
+    if((sum % 10) == 0) return true;
+    else return false;
 }
 
 int main() {
@@ -81,7 +95,7 @@ int main() {
                 if (CardNum.length()>16){ cout << "your input is over 16 characters, shorten it" <<endl; continue;}
 
         else {
-            cardCorrect = true;
+            cardCorrect = Luhn(CardNum);
         }
     } while(!cardCorrect);
     cout<<"Thank you for signing away your soul ;)"<<endl;
