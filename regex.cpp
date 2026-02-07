@@ -20,7 +20,7 @@ int main() {
     string CardNum = "";
     regex money("");
     while(regex_match(name, nombre)) {
-        cout << "put in your first middle and last name" << endl;
+        cout << "put in your first, middle, and last name" << endl;
         cin >> name;
     }
     while(regex_match(address, house)) {
