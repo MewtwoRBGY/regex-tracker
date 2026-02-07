@@ -20,7 +20,7 @@ int main() {
     string FoneNum = "";
     regex phone("^[0-9]{3}-[0-9]{3}-[0-9]{4}$");
     string CardNum = "";
-    regex money("");
+    regex money("[/d]{4}(/w|-)?[/d]{4}(/w|-)?[/d]{4}(/w|-)?[/d]{3}(/w|-)?[/d]?");
     while(regex_match(name, nombre)) {
         cout << "put in your first, middle, and last name" << endl;
         cin >> name;
