@@ -25,6 +25,7 @@ int main() {
     regex phone("^\\(?[0-9]{3}\\)?(-| )?[0-9]{3}(-| )?[0-9]{4}$");
     string CardNum;
     regex money("[\\d]{4}[\\d]{4}[\\d]{4}[\\d]{3}[\\d]?");
+    bool cardCorrect;
     do  {
         cout << "put in your first middle and last name, seperated by spaces" << endl;
         getline(cin, name);
@@ -67,7 +68,10 @@ int main() {
             cout << "Incorrect format. Try again"<<endl;
             continue;
         }
-    } while(cardCorrect);
+        else {
+            cardCorrect = true;
+        }
+    } while(!cardCorrect);
     cout<<"Thank you for signing away your soul ;)"<<endl;
     return 0;
 }
