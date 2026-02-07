@@ -16,7 +16,7 @@ int main() {
     string SSN = "";
     regex tracker("");
     string FoneNum = "";
-    regex phone("");
+    regex phone(^[0-9]{3}-[0-9]{3}-[0-9]{4}$);
     string CardNum = "";
     regex money("");
     while(regex_match(name, nombre)) {
