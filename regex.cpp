@@ -38,7 +38,7 @@ int main() {
     string FoneNum;
     regex phone("^\\(?[0-9]{3}\\)?(-| )?[0-9]{3}(-| )?[0-9]{4}$");
     string CardNum;
-    regex money("[\\d]{4}[\\d]{4}[\\d]{4}[\\d]{3}[\\d]?");
+    regex money("(4\\d|5\\d|2\\d|34|37)[\\d]{2}[\\d]{4}[\\d]{4}[\\d]{3}[\\d]?"); // the numbers in the front make sure it is 4,5,2,34,37 to make sure it is visa,mastercard, or amex
     bool cardCorrect;
     do  {
         cout << "put in your first middle and last name, seperated by spaces" << endl;
