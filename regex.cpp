@@ -80,7 +80,7 @@ int main() {
 
     } while(!regex_match(SSN, tracker));
     do  {
-        cout << "put in your phone number, with either spaces or dashes or one at all." << endl;
+        cout << "put in your phone number, with either spaces or dashes or no seperators." << endl;
         getline(cin, FoneNum);
         if(!regex_match(FoneNum, phone)) {
             cout << "Incorrect format. Try again"<<endl;
