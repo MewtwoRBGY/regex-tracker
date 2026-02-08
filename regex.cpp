@@ -48,7 +48,7 @@ int main() {
         }
         if (name.length()>100){ cout << "your input is over 100 characters, shorten it" <<endl; continue;}
 
-    } while(!regex_match(name, nombre));
+    } while(!regex_match(name, nombre) && name.length()<=100);
     do {
         cout << "Input in your street address followed by city and zip, seperated with spaces or commas" << endl;
         getline(cin, address);
@@ -65,8 +65,9 @@ int main() {
         if(!regex_match(BirthDate, bday)) {
             cout << "Incorrect format. Try again"<<endl;
         }
-        regex check2("^[\\d]{1-3}");
-        if(regex_match(BirthDate, check2)) { cout<<"Year has too few numbers"<<endl; }
+        regex check2("[\\D]");
+        if(regex_match(BirthDate, check2)) { cout<<"No letters in birthday"<<endl; }
+        if(BirthDate.length() < 8) { cout<<"Year has too few characters"<<endl; }
     } while(!regex_match(BirthDate, bday));
     do {
         cout << "put in your SSN" << endl;
@@ -79,7 +80,7 @@ int main() {
 
     } while(!regex_match(SSN, tracker));
     do  {
-        cout << "put in your phone number" << endl;
+        cout << "put in your phone number, with either spaces or dashes or one at all." << endl;
         getline(cin, FoneNum);
         if(!regex_match(FoneNum, phone)) {
             cout << "Incorrect format. Try again"<<endl;
@@ -90,18 +91,17 @@ int main() {
 
     } while(!regex_match(FoneNum, phone));
     do {
-        cout << "put in your credit card number" << endl;
+        cout << "put in your credit card number. NO SPACES" << endl;
         getline(cin, CardNum);
         if(!regex_match(CardNum, money)) {
             cout << "Incorrect format. Try again"<<endl;
-            continue;
+            if (CardNum.length()<15){ cout << "your input is under 15 characters. Too short" <<endl;}
+            cardCorrect = false;
         }
-                if (CardNum.length()<15){ cout << "your input is under 15 characters. Too short" <<endl; continue;}
-
         else {
             cardCorrect = Luhn(CardNum);
             if(!Luhn(CardNum)) {
-                cout << "Fails an annoying credit card formula";
+                cout << "Fails an annoying credit card formula"<<endl;;
             }
         }
     } while(!cardCorrect);
