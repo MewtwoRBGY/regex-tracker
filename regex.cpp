@@ -50,22 +50,23 @@ int main() {
 
     } while(!regex_match(name, nombre));
     do {
-        cout << "put in your street address" << endl;
+        cout << "Input in your street address followed by city and zip, seperated with spaces or commas" << endl;
         getline(cin, address);
         if(!regex_match(address, house)) {
             cout << "Incorrect format. Try again"<<endl;
         }
-                if (address.length()>100){ cout << "your input is over 100 characters, shorten it" <<endl; continue;}
+        regex check1("^\\D.*");
+        if(regex_match(address, check1)) { cout<<"Address must start with a number"<<endl; }
 
     } while(!regex_match(address, house));
     do {
-        cout << "put in your date of birth" << endl;
+        cout << "Put in your date of birth, YYYY-MM-DD" << endl;
        getline(cin, BirthDate);
         if(!regex_match(BirthDate, bday)) {
             cout << "Incorrect format. Try again"<<endl;
         }
-                if (BirthDate.length()>6){ cout << "your input is over 6 characters, shorten it" <<endl; continue;}
-
+        regex check2("^[\\d]{1-3}");
+        if(regex_match(BirthDate, check2)) { cout<<"Year has too few numbers"<<endl; }
     } while(!regex_match(BirthDate, bday));
     do {
         cout << "put in your SSN" << endl;
@@ -73,7 +74,8 @@ int main() {
         if(!regex_match(SSN, tracker)) {
             cout << "Incorrect format. Try again"<<endl;
         }
-                if (SSN.length()>9){ cout << "your input is over 9 characters, shorten it" <<endl; continue;}
+        regex check3("[\\D]");
+        if(regex_match(SSN, check3)) { cout<<"No letters in SSN"<<endl; }
 
     } while(!regex_match(SSN, tracker));
     do  {
@@ -82,7 +84,9 @@ int main() {
         if(!regex_match(FoneNum, phone)) {
             cout << "Incorrect format. Try again"<<endl;
         }
-                if (FoneNum.length()>10){ cout << "your input is over 10 characters, shorten it" <<endl; continue;}
+        regex check4("[\\D]");
+        if(FoneNum.length()<10) { cout<<"Length is too short"<<endl; }
+        if(regex_match(FoneNum, check4)) { cout<<"No letters in phone number"<<endl; }
 
     } while(!regex_match(FoneNum, phone));
     do {
@@ -92,10 +96,13 @@ int main() {
             cout << "Incorrect format. Try again"<<endl;
             continue;
         }
-                if (CardNum.length()>16){ cout << "your input is over 16 characters, shorten it" <<endl; continue;}
+                if (CardNum.length()<15){ cout << "your input is under 15 characters. Too short" <<endl; continue;}
 
         else {
             cardCorrect = Luhn(CardNum);
+            if(!Luhn) {
+                cout << "Fails an annoying credit card formula";
+            }
         }
     } while(!cardCorrect);
     cout<<"Thank you for signing away your soul ;)"<<endl;
