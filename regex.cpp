@@ -100,7 +100,7 @@ int main() {
 
         else {
             cardCorrect = Luhn(CardNum);
-            if(!Luhn) {
+            if(!Luhn(CardNum)) {
                 cout << "Fails an annoying credit card formula";
             }
         }
